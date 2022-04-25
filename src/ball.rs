@@ -30,8 +30,12 @@ impl Ball {
 
     pub fn update(&mut self, dt: f64, window_height: f64, window_width: f64) {
 
-        // Check boundary
-        // x boundary
+        self.move_ball(dt, window_height, window_width);
+
+        
+    }
+
+    fn move_ball(&mut self, dt: f64, window_height: f64, window_width: f64) {
         if (self.position[0] <= self.radius)  ||
            (self.position[0] >= (window_width - self.radius)) {
             self.velocity[0] = -self.velocity[0]; 
